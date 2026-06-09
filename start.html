@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="discription" content="skillset">
+  <!---<link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png"> -->
+  <link rel="shortcut icon" href="assets/images/favicon-32x32.png">  <!-- line 7 is the same as this line, in my case i prefer this, that's why i commented the line-->
+
+  <title>Frontend Mentor | Component</title>
+
+  <!-- yes the most recommended way to style is with external stylesheets, so altenatively i will aply external stylesheet -->
+  <link rel="stylesheet" media="screen" href="style.css" type="text/css">  <!-- this is the line to link the external stylesheet -->
+
+  <meta name="author" content="MOGOBOYA L. BRODMANN">
+
+  <style>
+
+    .index-game{
+      background: var(--background);
+      font-family: var(--font-family);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      min-height: 100hv;
+      overflow: hidden;
+    }
+
+    .task-card{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+    }
+    .start-task{
+      display: block;
+      /*flex-direction: column;
+      justify-content: center;*/
+      max-width: 550px;
+      width: 100%;
+    }
+    .task{
+      background: rgba(255, 255, 255, 0.507);
+      border: 1px none var(--ink-color);
+      border-radius: var(--border-radius);
+      padding: 2.5%;
+      /*display: flex;
+      flex-direction: column;
+      align-items: center;*/      
+    }
+
+    .title{
+      font-size: 15px;
+      text-wrap: none;
+    }
+    .sub-title{
+      font-size: 14px;
+    }
+    .play-btn{
+      width: 100%;
+    }
+
+  </style>
+</head>
+
+<body class="index-game">
+
+    <div class="logo">  
+        <img src="assets/images/favicon-32x32.png" alt="logo">
+        <span class="hero-head" >Frontend Mentor | Component</span>
+    </div>
+
+    <div class="task-card">
+        <div class="start-task" id="start-task">
+          <div class="task">
+            <p class="title">Quick Brain Frontend Developmemnt</p>
+            <p class="sub-title">4 mini-tests · about 60 seconds total.<br>Press thebutton to start!</p>
+            <a href="indexmain.html"><button title="Game Start" class="play-btn">Start</button></a>  <!-- when a user click on this button they activate or call the function on the script file -->
+          </div> 
+        </div>
+
+
+        <div class="relt-active">
+
+          
+
+        </div>
+
+    </div> 
+
+
+    
+    <script type="text/javascript" href="script.js"></script>
+</body>
+</html>

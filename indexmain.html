@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+  <!--NUT-SHEL OF WEBDEV HTML FRAMEWORK-->
+
+<html lang="en">
+  <!--RESULTS SUMMARY COMPONENT WINDOW -->
+  <!-- LACON MOGOBOYA copyright 2026 -->
+
+  <!--search engine section-->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+  <!---<link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png"> -->
+  <link rel="shortcut icon" href="assets/images/favicon-32x32.png">  <!-- line 7 is the same as this line, in my case i prefer this, that's why i commented the line-->
+  
+  <title>Frontend Mentor | Results summary component</title>
+
+  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+
+  <!-- yes the most recommended way to style is with external stylesheets, so altenatively i will aply external stylesheet -->
+  <link rel="stylesheet" href="style.css">  <!-- this is the line to link the external stylesheet -->
+  
+  <!-- <style> === and this is the internal stylesheet, avoild for mantainens ===
+    .attribution { font-size: 11px; text-align: center; }
+    .attribution a { color: hsl(228, 45%, 44%); }
+  </style> -->
+
+  <style>
+    .re-lt{
+      display:flex;
+      flex-direction: row;
+      justify-content: center;
+      gap: 5px;
+      width: 95%;
+     /* background: var(--background);*/
+      height: 15px;
+      padding: 10px;
+      border-radius: var(--border-radius);
+      margin: 2.1%;
+      margin-top: 5.9%;
+      font-size: small;
+    }
+    button{
+      background: #111827;
+      color: #f3f4f6;
+      width: 100%;
+      height: 33px;
+      padding: 10px;
+      margin:3.5% ;
+
+    }
+    svg label{
+      float:left;
+    }
+    .re-lt p{
+      margin-left: 50%;
+    }
+    .box-result{
+      background: var(--accent-color);
+      border-radius: var(--border-radius);
+      z-index: 1;
+      color: #f3f4f6;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .box-summary{
+      background: var(--box-color);
+      border-radius: 0 10px 10px 0;
+      margin-left: -5px;
+
+    }
+    .box-result, .box-summary{
+      float: left;
+      margin-top: 5%;
+      padding: 2.5%;
+      height: 330px;
+      width: 280px;
+
+      
+    }
+
+
+
+    .marks{
+      background: linear-gradient(360deg, #0c09cf60, #c9d6ff1f);
+      height: 20%;
+      width: 30%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 10%;
+      padding-top: 12%;
+      border-radius: 50%;
+      margin-top: 5%;
+      /*justify-content: center;*/
+      box-shadow: none;
+      
+    }
+    .off-set{
+      font-weight: 100;
+      color: gray;
+      font-size: small;
+    }
+    .highlight{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      /*text-wrap:initial;*/
+      width: 60%;
+      margin: 2.5%;
+    }
+    .conclusion{
+      text-wrap-style: inherits;
+      font-weight: 100;
+      font-size: small;
+    }
+    
+
+    .popup-layout{
+      display: none;
+      position: fixed;
+      background: rgba(0, 0, 0, 0.45);
+      backdrop-filter: blur(4px);
+      z-index: 100;
+      justify-content: center;
+      inset: 0;
+    }
+
+
+    .popup-layout.active{
+      display: flex;
+    }
+    .popup-window{
+      background: var(--box-color);
+      border-radius: var(--border-radius);
+      padding: 40px 36px;
+      max-width: 380px;
+      width: 90%;
+      box-shadow: var(--box-shadow);
+      text-align: center;
+      animation: popIn 0.3s ease;
+
+    }
+
+    @keyframes popIn{
+      form { transform: scale(0.85); opacity: 0;}
+      to{ transform: scale(1); opecity:1;}
+    }
+
+    
+
+    .popup-window{
+      font-size: 48px;
+      margin-bottom: 10px;
+    }
+    .popup-window h2 {
+      font-size: 15px;
+      margin-bottom: 5px;
+      color: var(--accent-color);
+    }
+
+    .popup-window p {
+      font-size: 12px;
+      color: var(--text-color);
+      font-weight: 300;
+      margin-bottom: 10px;
+    }
+
+
+
+
+    .popup-window .username-ink{
+      font-weight: 500;
+      color: var(--accent-color);
+    }
+    .popup-close{
+      background: var(--accent-color);
+      color: #f3f4f6;
+      border: none;
+      padding: 10px 20px;
+      border-radius: var(--border-radius);
+      cursor: pointer;
+      font-size: 13px;
+      width: auto;
+      height:auto;
+      margin: 0;
+    }
+
+
+    .popup-close:hover{
+      background: var(--background);
+      color: var(--accent-color);
+      border: 1px solid var(--accent-color);
+    }
+    
+  </style>
+</head>
+
+  <!-- here is the body were everything on the home-page is stored-->
+<body class="index-body">
+
+  <div class="box-result">
+    <h4>Your Result</h4>
+      <div class="marks">
+            <h1 style="color: #f3f4f6;">76</h1>
+          <p class="off-set">of 100</p>
+      </div>
+
+      <div class="highlight" >
+        <h2>Great</h2>
+        <p class="conclusion">You scored higher than 65% of the people who have taken these tests.</p>
+      </div>
+  </div>
+
+  <div class="box-summary">
+      <h4>Summary</h4>
+
+        <div class="re-lt"  title="Reaction Bar" style="background: rgba(255, 0, 119, 0.089);">          
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 20 20"><path stroke="#F55" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.25" d="M10.833 8.333V2.5l-6.666 9.167h5V17.5l6.666-9.167h-5Z"/></svg>       
+          <label style="color: rgb(243, 2, 2);" for="svg">Reaction</label>
+          <p><b>80</b> / 100</p>
+        </div>
+  
+        <div class="re-lt" title="Memory Bar" style="background: rgba(255, 255, 0, 0.158);">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 20 20"><path stroke="#FFB21E" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.25" d="M5.833 11.667a2.5 2.5 0 1 0 .834 4.858"/><path stroke="#FFB21E" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.25" d="M3.553 13.004a3.333 3.333 0 0 1-.728-5.53m.025-.067a2.083 2.083 0 0 1 2.983-2.824m.199.054A2.083 2.083 0 1 1 10 3.75v12.917a1.667 1.667 0 0 1-3.333 0M10 5.833a2.5 2.5 0 0 0 2.5 2.5m1.667 3.334a2.5 2.5 0 1 1-.834 4.858"/><path stroke="#FFB21E" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.25" d="M16.447 13.004a3.334 3.334 0 0 0 .728-5.53m-.025-.067a2.083 2.083 0 0 0-2.983-2.824M10 3.75a2.085 2.085 0 0 1 2.538-2.033 2.084 2.084 0 0 1 1.43 2.92m-.635 12.03a1.667 1.667 0 0 1-3.333 0"/></svg>
+          <label style="color:yellow" for="svg">Memory</label>
+          <p><b>92</b> / 100</p>
+        </div>
+
+        <div class="re-lt" title="Verbal Bar" style="background: rgba(0, 128, 0, 0.095);">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 20 20"><path stroke="#00BB8F" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.25" d="M7.5 10h5M10 18.333A8.333 8.333 0 1 0 1.667 10c0 1.518.406 2.942 1.115 4.167l-.699 3.75 3.75-.699A8.295 8.295 0 0 0 10 18.333Z"/></svg>
+          <label style="color: green;" for="svg">Verbal</label>
+          <p><b>61</b> / 100</p>
+        </div>
+
+        <div class="re-lt" title="Visual Bar" style="background: rgba(0, 0, 255, 0.075);">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="none" viewBox="0 0 20 20"><path stroke="#1125D6" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.25" d="M10 11.667a1.667 1.667 0 1 0 0-3.334 1.667 1.667 0 0 0 0 3.334Z"/><path stroke="#1125D6" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.25" d="M17.5 10c-1.574 2.492-4.402 5-7.5 5s-5.926-2.508-7.5-5C4.416 7.632 6.66 5 10 5s5.584 2.632 7.5 5Z"/></svg>
+          <label style="color: blue;" for="svg">Visual</label>
+          <p><b>72</b> / 100</p>
+        </div>
+
+        <button title="Game On" type="button" onclick="openPopup()">Continue</button>
+
+  </div>
+
+  <div class="popup-layout" id="thankyou-popup">
+    <div class="popup-window">
+      <div class="emoji"></div>
+      <h2>Thank you, <span class="username-ink" id="popup-username">Champion</span></h2>
+      <p>
+        You have completed the Quick Frontend development. <br>
+        Your results have been recorded. Keep on developing!
+      </p>
+      <button class="popup-close" onclick="closePopup()">Close</button>
+    </div>
+  </div>
+  
+  <div class="inter-footer">
+        <p>Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. Coded by <a href="#">LACON MOGOBOYA</a>.</p>
+        <p>copyright &copy; 2026 Frontend Mentor. All rights reserved.</p>
+  </div>
+
+
+  
+  <!--<div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">LACON MOGOBOYA</a>.
+  </div>-->
+  <script src="script.js" ></script>
+</body>
+</html>
