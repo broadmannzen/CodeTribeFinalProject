@@ -207,11 +207,12 @@ button:focus{
         float: none;
         width: 100%;
         height: auto;
-        margin-top: 0;
+        margin-top: 0px;
+        display: grid;
         padding: 6% 5%;
     }
     .box-result{
-        border-radius:0 0 24px 24px;
+        border-radius:0 0px 24px 24px;
     }
     .box-summary{
         margin-left: 0;
