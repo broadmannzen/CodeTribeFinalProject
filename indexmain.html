@@ -26,6 +26,14 @@
   </style> -->
 
   <style>
+
+    .card-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: var(--box-shadow);
+    }
     .re-lt{
       display:flex;
       flex-direction: row;
@@ -199,6 +207,7 @@
 
   <!-- here is the body were everything on the home-page is stored-->
 <body class="index-body">
+<div class="card-container">
 
   <div class="box-result">
     <h4>Your Result</h4>
@@ -243,6 +252,7 @@
         <button title="Game On" type="button" onclick="openPopup()">Continue</button>
 
   </div>
+</div>
 
   <div class="popup-layout" id="thankyou-popup">
     <div class="popup-window">
