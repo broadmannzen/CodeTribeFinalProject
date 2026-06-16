@@ -195,9 +195,6 @@ button:focus{
 }
 
 @media(max-width: 640px){
-    /*.card-container{
-        grid-template-columns: 1fr;
-    }*/
     .index-body{
         flex-direction: column;
         align-items: center;
@@ -230,7 +227,7 @@ button:focus{
     }
     re-lt{
         height: auto;
-        padding: 12px 10px;
+        padding: 10px 8px;
         margin: 3% 0;
     }
     re-lt p{
@@ -260,6 +257,17 @@ button:focus{
     }
     .re-lt{
         font-size: 0.8rem;
+    }
+        .box-result, .box-summary{
+        float: top;
+        width: 100%;
+        height: auto;
+        margin-top: 0px;
+        display: flex;
+        padding: 6% 5%;
+    }
+    .index-body{
+        height: auto;
     }
 }
 
