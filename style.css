@@ -18,8 +18,9 @@
 .index-body{
     background: var(--background);
     font-family: var(--font-family);
-    display: grid;
-    place-items: center;
+    display: flex;
+    justify-content: center;
+    aling-items: center;
     min-height: 100vh;
     overflow: hidden;
 
