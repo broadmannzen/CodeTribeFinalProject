@@ -163,10 +163,10 @@ button:focus{
         
     }
     .hero-body{
-        width:100%;
+        width:90%;
     }
     form{
-        width:100%;
+        width:90%;
     }
     .index-body{
         overflow-y: auto;
@@ -206,11 +206,11 @@ button:focus{
         padding-bottom: 80px;
     }
     .box-result, .box-summary{
-        float: none;
+        float: left;
         width: 100%;
         height: auto;
         margin-top: 0px;
-        display: grid;
+        display: flex;
         padding: 6% 5%;
     }
     .box-result{
