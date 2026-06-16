@@ -20,7 +20,7 @@
     font-family: var(--font-family);
     display: flex;
     justify-content: center;
-    aling-items: center;
+    align-items: center;
     min-height: 100vh;
     overflow: hidden;
 
@@ -265,6 +265,9 @@ button:focus{
         margin-top: 0px;
         display: flex;
         padding: 6% 5%;
+    }
+    .box-result div, box-summary{
+        float: left;
     }
     .index-body{
         height: auto;
