@@ -203,11 +203,9 @@ button:focus{
         padding-bottom: 80px;
     }
     .box-result, .box-summary{
-        float: left;
         width: 100%;
         height: auto;
         margin-top: 0px;
-        display: flex;
         padding: 6% 5%;
     }
     .box-result{
@@ -263,11 +261,10 @@ button:focus{
         width: 100%;
         height: auto;
         margin-top: 0px;
-        display: flex;
         padding: 6% 5%;
     }
-    .box-result div, box-summary{
-        float: left;
+    .box-result div, box-summary div {
+    
     }
     .index-body{
         height: auto;
